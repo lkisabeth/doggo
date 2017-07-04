@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :posts
   resources :dogs
   root 'dogs#index'
   
