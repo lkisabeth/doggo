@@ -2,11 +2,7 @@
   <%= link_to dogs_path do %>
     <p class="navbar-brand whitetext">Flatiron Store</p>
   <% end %>
-  <% if current_user && current_user.current_cart %>
-    <%= link_to cart_path(current_user.current_cart) do %>
-      <p class="whitetext navbar-text"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</p>
-    <% end %>
-  <% end %>
+  
 
   <%= render partial: 'layouts/sign_in' %>
 </nav>
