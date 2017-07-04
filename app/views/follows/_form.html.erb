@@ -1,0 +1,11 @@
+<div class="follow">
+  <% if dog.followed_by?(current_dog) %>
+    <%= form_tag unfollow_path(dog_id: dog.id), method: :post, remote: true do %>
+      <%= button_tag 'unfollow', class: 'btn btn-primary' %>
+    <% end %>
+  <% else %>
+    <%= form_tag follow_path(dog_id: dog.id), method: :post, remote: true do %>
+      <%= button_tag 'follow', class: 'btn btn-success' %>
+    <% end %>
+  <% end %>
+</div>
