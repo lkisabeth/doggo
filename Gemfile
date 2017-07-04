@@ -38,6 +38,7 @@ gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'acts_as_votable'
 gem 'acts_as_commentable'
+gem 'acts_as_follower'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
