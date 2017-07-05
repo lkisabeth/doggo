@@ -14,7 +14,7 @@ class HowlsController < ApplicationController
 
   private
     def howl_params
-      params.require(@howl).permit(:image, :caption)
+      params.require(:howl).permit(:image, :caption)
     end
 
 end
