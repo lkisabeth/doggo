@@ -2,7 +2,7 @@ class HowlsController < ApplicationController
   before_action :set_howl, only: [:show, :edit, :update, :destroy]
 
   def index
-    @howls = Howl.all
+    @howls = Howl.all.order('created_at DESC')
   end
 
   def new
@@ -11,8 +11,10 @@ class HowlsController < ApplicationController
 
   def create
     if @howl = Howl.create(howl_params)
+      flash[:success] = "You have Howled loud and clear for all to hear!"
       redirect_to howls_path
     else
+      flash.now[:alert] = "Your boofer seems to be broken. Try again!"
       render :new
     end
   end
@@ -25,14 +27,17 @@ class HowlsController < ApplicationController
 
   def update
     if @howl.update(howl_params)
+      flash[:success] = "HOOOOOWWWWWLL!!!!!"
       redirect_to(howls_path(@howl))
     else
+      flash.now[:alert] = "Your re-boofer isn't boofing. Boof again."
       render :edit
     end
   end
 
   def destroy
     @howl.destroy
+    flash[:alert] = "That boofer has been muzzled for good."
     redirect_to root_path
   end
 
