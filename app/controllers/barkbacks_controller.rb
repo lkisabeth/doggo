@@ -13,6 +13,14 @@ class BarkbacksController < ApplicationController
     end
   end
 
+  def destroy
+    @barkback = @howl.barkbacks.find(params[:id])
+
+    @barkback.destroy
+    flash[:success] = "That barkback can no longer be heard! :("
+    redirect_to root_path
+  end
+
   private
     def barkback_params
       params.require(:barkback).permit(:content)
