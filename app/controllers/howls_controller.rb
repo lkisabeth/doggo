@@ -27,6 +27,12 @@ class HowlsController < ApplicationController
     redirect_to(howls_path(@howl))
   end
 
+  def destroy
+    @howl = Howl.find(params[:id])
+    @howl.destroy
+    redirect_to root_path
+  end
+
   private
     def howl_params
       params.require(:howl).permit(:image, :caption)
