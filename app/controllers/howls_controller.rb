@@ -1,4 +1,5 @@
 class HowlsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_howl, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,7 +11,9 @@ class HowlsController < ApplicationController
   end
 
   def create
-    if @howl = Howl.create(howl_params)
+    @howl = current_user.howls.build(howl_params)
+
+    if @howl.save
       flash[:success] = "You have Howled loud and clear for all to hear!"
       redirect_to howls_path
     else
