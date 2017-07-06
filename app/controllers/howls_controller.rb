@@ -7,7 +7,7 @@ class HowlsController < ApplicationController
   end
 
   def new
-    @howl = Howl.new
+    @howl = current_user.howls.build
   end
 
   def create
