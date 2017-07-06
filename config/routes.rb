@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :howls
+
+  resources :howls do
+    resources :barkbacks
+  end
 
   root 'howls#index'
   # The priority is based upon order of creation: first created -> highest priority.

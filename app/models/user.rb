@@ -8,5 +8,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :howls, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :barkbacks, dependent: :destroy
 end

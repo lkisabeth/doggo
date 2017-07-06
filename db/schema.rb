@@ -12,14 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20170706205306) do
 
-  create_table "comments", force: :cascade do |t|
+  create_table "barkbacks", force: :cascade do |t|
     t.integer "user_id"
     t.integer "howl_id"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["howl_id"], name: "index_comments_on_howl_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["howl_id"], name: "index_barkbacks_on_howl_id"
+    t.index ["user_id"], name: "index_barkbacks_on_user_id"
   end
 
   create_table "howls", force: :cascade do |t|

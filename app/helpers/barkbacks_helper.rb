@@ -1,0 +1,2 @@
+module BarkbacksHelper
+end

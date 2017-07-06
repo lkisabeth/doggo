@@ -7,5 +7,5 @@ class Howl < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   belongs_to :user
-  has_many :comments, dependent: :destroy
+  has_many :barkbacks, dependent: :destroy
 end
