@@ -1,6 +1,7 @@
 class HowlsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_howl, only: [:show, :edit, :update, :destroy]
+  before_action :owned_howl, only: [:edit, :update, :destroy]
 
   def index
     @howls = Howl.all.order('created_at DESC')
@@ -51,6 +52,13 @@ class HowlsController < ApplicationController
 
     def set_howl
       @howl = Howl.find(params[:id])
+    end
+
+    def owned_howl
+      unless current_user == @howl.user
+        flash[:alert] = "Paws off! That's not your howl!"
+        redirect_to root_path
+      end
     end
 
 end

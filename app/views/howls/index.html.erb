@@ -2,12 +2,13 @@
   <%= @howls.each do |howl| %>
     <div class="howl">
       <div class="howl-head">
-        <p class="name">Apollo Greene</p>
+        <p class="name"><%= howl.user.doggo_name %></p>
       </div>
       <div class="image center-block">
         <%= link_to (image_tag howl.image.url(:medium), class: 'img-responsive'), howl_path(howl) %>
       </div>
       <p class="caption"><%= howl.caption %></p>
+      <p class="human_name">My human: <%= howl.user.human_name %></p>
     </div>
   <% end %>
 </div>
