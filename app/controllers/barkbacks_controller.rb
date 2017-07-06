@@ -1,12 +1,15 @@
 class BarkbacksController < ApplicationController
+  before_action :set_howl
 
   def create
     @barkback = @howl.barkbacks.build(barkback_params)
     @barkback.user_id = current_user.id
 
     if @barkback.save
-      flash[:success] = "You barked right back at the howler!"
-      redirect_to :back
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
     else
       flash[:alert] = "That's not much of a bark. Unmuzzle yourself and try again!"
       render root_path
