@@ -13,6 +13,10 @@ class HowlsController < ApplicationController
     redirect_to howls_path
   end
 
+  def show
+    @howl = Howl.find(params[:id])
+  end
+
   private
     def howl_params
       params.require(:howl).permit(:image, :caption)

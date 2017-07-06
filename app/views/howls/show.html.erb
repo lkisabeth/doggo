@@ -1,0 +1,14 @@
+<div class="howls-wrapper row">
+  <div class="howl">
+    <div class="howl-head">
+      <p class="name">Apollo Greene</p>
+    </div>
+    <div class="image center-block">
+      <%= image_tag @howl.image.url(:medium) %>
+    </div>
+    <p class="caption"><%= @howl.caption %></p>
+    <div class="text-center">
+      <%= link_to "Home", howls_path, class: "btn btn-default" %>
+    </div>
+  </div>
+</div>
