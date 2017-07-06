@@ -1,1 +1,13 @@
-<h1>Doggo</h1>
+<div class="howls-wrapper row">
+  <%= @howls.each do |howl| %>
+    <div class="howl">
+      <div class="howl-head">
+        <p class="name">Apollo Greene</p>
+      </div>
+      <div class="image center-block">
+        <%= link_to (image_tag howl.image.url(:medium)), howl_path(howl) %>
+      </div>
+      <p class="caption"><%= howl.caption %></p>
+    </div>
+  <% end %>
+</div>
