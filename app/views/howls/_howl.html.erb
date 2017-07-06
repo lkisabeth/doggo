@@ -1,0 +1,35 @@
+<div class="howls-wrapper">
+  <div class="howl">
+    <div class="howl-head">
+      <p class="user-name"><%= howl.user.doggo_name %></p>
+    </div>
+    <div class="image center-block">
+      <%= link_to (image_tag howl.image.url(:medium), class: 'img-responsive'), howl_path(howl) %>
+    </div>
+    <div class="howl-bottom">
+      <p class="caption"><span class="user-name"><%= howl.user.doggo_name %></span> <%= howl.caption %></p>
+      <p class="human_name">My human: <%= howl.user.human_name %></p>
+      <% if howl.barkbacks %>
+        <% howl.barkbacks.each do |barkback| %>
+          <div class="barkback">
+            <p class="barkback-content"><span class="user-name"><%= barkback.user.doggo_name %></span> <%= barkback.content %></p>
+            <% if barkback.user == current_user %>
+              <%= link_to howl_barkback_path(howl, barkback), method: :delete, data: { confirm: "Muzzle this barkback? Are you sure?" } %>
+              <span class="glyphicon glyphicon-remove delete-barkback-icon"></span>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="barkback-like-form row">
+        <div class="like-button col-sm-1">
+          <span class="glyphicon glyphicon-heart-empty"></span>
+        </div>
+        <div class="barkback-form col-sm-11">
+          <%= form_for [howl, howl.barkbacks.new] do |f| %>
+            <%= f.text_field :content, placeholder: "Bark back at them..!" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

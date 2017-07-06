@@ -1,14 +1,5 @@
 <div class="howls-wrapper row">
-  <div class="howl">
-    <div class="howl-head">
-      <p class="name"><%= @howl.user.doggo_name %></p>
-    </div>
-    <div class="image center-block">
-      <%= image_tag @howl.image.url(:medium) %>
-    </div>
-    <p class="caption"><%= @howl.caption %></p>
-    <p class="human_name">My human: <%= @howl.user.human_name %></p>
-  </div>
+  <%= render 'howl', howl: @howl %>
   <div class="text-center edit-links">
     <%= link_to "Home", howls_path, class: "" %>
     <% if @howl.user == current_user %>

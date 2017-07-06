@@ -3,25 +3,12 @@ $icon-font-path: "bootstrap/";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-html {
-  height: 100%;
-}
-
 body {
-  height: 100%;
   background-color: #fafafa;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
-.alert {
-  margin-bottom: 0px;
-}
-
 /* ## NAVBAR CUSTOMISATIONS ## */
-
-.navbar {
-  margin-bottom: 0px;
-}
 
 .navbar-brand {
   a {
@@ -31,48 +18,16 @@ body {
 
 .navbar-default {
   background-color: #fff;
+  height: 54px;
   .navbar-nav li a {
     color: #125688;
   }
 }
 
 .navbar-container {
-  max-width: 640px;
+  width: 70%;
   margin: 0 auto;
 }
-
-
-.image {
-  border-bottom: 1px solid #eeefef;
-  border-top: 1px solid #eeefef;
-}
-
-.caption {
-  padding: 24px 24px;
-  font-size: 15px;
-  line-height: 18px;
-}
-
-.human_name {
-  padding-left: 24px;
-  padding-bottom: 24px;
-  font-size: 12px;
-}
-
-.form-wrapper {
-  width: 60%;
-  margin: 20px auto;
-  background-color: #fff;
-  padding: 40px;
-  border: 1px solid #eeefef;
-  border-radius: 3px;
-}
-
-.edit-links {
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
 
 /* ## POST CUSTOMISATIONS ## */
 
@@ -125,24 +80,26 @@ body {
   }
   .user-name {
     font-weight: 500;
+    margin-right: 0.3em;
     color: #125688;
     font-size: 15px;
   }
   .user-name, .caption-content {
     display: inline;
   }
-  #barkback {
+  #comment {
     margin-top: 7px;
     .user-name {
       font-weight: 500;
       margin-right: 0.3em;
     }
-    .delete-barkback-icon {
+    .delete-barkback {
       float: right;
       color: #515151;
     }
   }
   margin-bottom: 7px;
+  padding-top: 24px;
   padding-left: 24px;
   padding-right: 24px;
   padding-bottom: 10px;
@@ -150,7 +107,7 @@ body {
   line-height: 18px;
 }
 
-.barkback_content {
+.barkback-content {
   font-size: 15px;
   line-height: 18px;
   border: medium none;
@@ -168,4 +125,20 @@ body {
   border-top: 1px solid #EEEFEF;
   flex-direction: row;
   justify-content: center;
+}
+
+/* ## Wrapper and styling for the new and edit views ## */
+
+.form-wrapper {
+  width: 60%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 40px;
+  border: 1px solid #eeefef;
+  border-radius: 3px;
+}
+
+.edit-links {
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
