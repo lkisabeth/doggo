@@ -1,4 +1,5 @@
 class HowlsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @howls = Howl.all
@@ -9,26 +10,28 @@ class HowlsController < ApplicationController
   end
 
   def create
-    @howl = Howl.create(howl_params)
-    redirect_to howls_path
+    if @howl = Howl.create(howl_params)
+      redirect_to howls_path
+    else
+      render :new
+    end
   end
 
   def show
-    @howl = Howl.find(params[:id])
   end
 
   def edit
-    @howl = Howl.find(params[:id])
   end
 
   def update
-    @howl = Howl.find(params[:id])
-    @howl.update(howl_params)
-    redirect_to(howls_path(@howl))
+    if @howl.update(howl_params)
+      redirect_to(howls_path(@howl))
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @howl = Howl.find(params[:id])
     @howl.destroy
     redirect_to root_path
   end
@@ -36,6 +39,10 @@ class HowlsController < ApplicationController
   private
     def howl_params
       params.require(:howl).permit(:image, :caption)
+    end
+
+    def set_howl
+      @howl = Howl.find(params[:id])
     end
 
 end
