@@ -10,15 +10,7 @@
       <p class="caption"><span class="user-name"><%= howl.user.doggo_name %></span> <%= howl.caption %></p>
       <p class="human_name">My human: <%= howl.user.human_name %></p>
       <% if howl.barkbacks %>
-        <% howl.barkbacks.each do |barkback| %>
-          <div class="barkback">
-            <p class="barkback-content"><span class="user-name"><%= barkback.user.doggo_name %></span> <%= barkback.content %></p>
-            <% if barkback.user == current_user %>
-              <%= link_to howl_barkback_path(howl, barkback), method: :delete, data: { confirm: "Muzzle this barkback? Are you sure?" } %>
-              <span class="glyphicon glyphicon-remove delete-barkback-icon"></span>
-            <% end %>
-          </div>
-        <% end %>
+        <%= render howl.barkbacks, howl: howl %>
       <% end %>
       <div class="barkback-like-form row">
         <div class="like-button col-sm-1">
