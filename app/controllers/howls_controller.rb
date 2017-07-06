@@ -17,6 +17,16 @@ class HowlsController < ApplicationController
     @howl = Howl.find(params[:id])
   end
 
+  def edit
+    @howl = Howl.find(params[:id])
+  end
+
+  def update
+    @howl = Howl.find(params[:id])
+    @howl.update(howl_params)
+    redirect_to(howls_path(@howl))
+  end
+
   private
     def howl_params
       params.require(:howl).permit(:image, :caption)

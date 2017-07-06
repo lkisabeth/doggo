@@ -7,8 +7,10 @@
       <%= image_tag @howl.image.url(:medium) %>
     </div>
     <p class="caption"><%= @howl.caption %></p>
-    <div class="text-center">
-      <%= link_to "Home", howls_path, class: "btn btn-default" %>
+    <div class="text-center edit-links">
+      <%= link_to "Home", howls_path, class: "" %>
+      |
+      <%= link_to "Edit Howl", edit_howl_path(@howl) %>
     </div>
   </div>
 </div>
