@@ -13,14 +13,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to  new_howl_path, :class => "" do %>
-            <i class="glyphicon glyphicon-plus"></i> Howl
-          <% end %>
-        </li>
-
-      </ul>
+      <%= render 'layouts/sign_in' %>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
