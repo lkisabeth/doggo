@@ -1,7 +1,12 @@
 <div class="howls-wrapper">
   <div class="howl">
     <div class="howl-head">
-      <p class="user-name"><%= howl.user.doggo_name %></p>
+      <div class="user-name">
+        <%= howl.user.doggo_name %>
+      </div>
+      <div class="time-ago">
+        <%= time_ago_in_words howl.created_at %>
+      </div>
     </div>
     <div class="image center-block">
       <%= link_to (image_tag howl.image.url(:medium), class: 'img-responsive'), howl_path(howl) %>
