@@ -19,9 +19,13 @@ class BarkbacksController < ApplicationController
   def destroy
     @barkback = @howl.barkbacks.find(params[:id])
 
-    @barkback.destroy
-    flash[:success] = "That barkback can no longer be heard! :("
-    redirect_to root_path
+    if @barkback.user_id == current_user.id
+      @barkback.delete
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
+    end
   end
 
   private

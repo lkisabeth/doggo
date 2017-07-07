@@ -9,7 +9,7 @@
     <div class="howl-bottom">
       <p class="caption"><span class="user-name"><%= howl.user.doggo_name %></span> <%= howl.caption %></p>
       <p class="human_name">My human: <%= howl.user.human_name %></p>
-      <div id="barkbacks_#{howl.id}">
+      <div id="barkbacks_<%=howl.id%>">
         <% if howl.barkbacks %>
           <%= render howl.barkbacks, howl: howl %>
         <% end %>
