@@ -9,7 +9,7 @@
     <div class="howl-bottom">
       <p class="caption"><span class="user-name"><%= howl.user.doggo_name %></span> <%= howl.caption %></p>
       <p class="human_name">My human: <%= howl.user.human_name %></p>
-      <div class="barkbacks{id: 'comments_#{howl.id}'}">
+      <div id="barkbacks_#{howl.id}">
         <% if howl.barkbacks %>
           <%= render howl.barkbacks, howl: howl %>
         <% end %>
@@ -19,8 +19,8 @@
           <span class="glyphicon glyphicon-heart-empty"></span>
         </div>
         <div class="barkback-form col-sm-11">
-          <%= form_for([howl, howl.barkbacks.new], remote: true) do |f| %>
-            <%= f.text_field :content, placeholder: "Bark back at them..!", class: "barkback_content", id: "barkback_content_#{howl.id}" %>
+          <%= form_for([howl, howl.barkbacks.build], remote: true) do |f| %>
+            <%= f.text_field :content, placeholder: 'Bark back at them..!', class: "barkback_content", id: "barkback_content_#{howl.id}" %>
           <% end %>
         </div>
       </div>
