@@ -10,13 +10,11 @@
 
   <%= render 'layouts/navbar' %>
 
-  <% if !flash.empty? %>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: [:alert, alert_for(name)] %>
-    <% end %>
-  <% end %>
+  <%= render partial: "layouts/flash_messages", flash: flash %>
 
   <%= yield %>
 
 </body>
+<script src="/js/vendor/jquery-1.9.1.min.js"></script>
+<script src="/js/vendor/bootstrap.min.js"></script>
 </html>
