@@ -1,6 +1,14 @@
 class BarkbacksController < ApplicationController
   before_action :set_howl
 
+  def index
+    @barkbacks = @howl.barkbacks.order("created_at ASC")
+
+    respond_to do |format|
+      format.html { render layout: !request.xhr? }
+    end
+  end
+
   def create
     @barkback = @howl.barkbacks.build(barkback_params)
     @barkback.user_id = current_user.id

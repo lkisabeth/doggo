@@ -14,9 +14,14 @@
     <div class="howl-bottom">
       <p class="caption"><span class="user-name"><%= howl.user.doggo_name %></span> <%= howl.caption %></p>
       <p class="human_name">My human: <%= howl.user.human_name %></p>
-      <div id="barkbacks_<%=howl.id%>">
-        <% if howl.barkbacks %>
-          <%= render howl.barkbacks, howl: howl %>
+      <div class="barkbacks" id="barkbacks_<%=howl.id%>">
+        <% if howl.barkbacks.any? %>
+          <%= render howl.barkbacks.first(4), howl: howl %>
+          <% unless howl.barkbacks.count <= 4 %>
+            <div class="paginator" id="barkbacks-paginator-<%=howl.id%>">
+              <%= link_to "view all #{howl.barkbacks.count} bark-backs", howl_barkbacks_path(howl), remote: true, class: "moar-barkbacks", id: "moar_barkbacks_#{howl.id}", data: {howl_id: "#{howl.id}", type: "html", value: "#{howl.barkbacks.count}"} %>
+            </div>
+          <% end %>
         <% end %>
       </div>
       <div class="barkback-like-form row">
