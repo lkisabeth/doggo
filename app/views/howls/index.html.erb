@@ -2,4 +2,6 @@
     <%= render 'howls' %>
 </div>
 
-<%= paginate @howls %>
+<div class="text-center" id="paginator">
+  <%= link_to_next_page @howls, 'MOAR HOOOOWLS!', remote:true, id: 'moar' %>
+</div>
