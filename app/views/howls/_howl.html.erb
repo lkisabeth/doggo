@@ -2,7 +2,7 @@
   <div class="howl">
     <div class="howl-head">
       <div class="user-name">
-        <%= howl.user.doggo_name %>
+        <%= link_to howl.user.doggo_name, profile_path(howl.user.doggo_name) %>
       </div>
       <div class="time-ago">
         <%= time_ago_in_words howl.created_at %>

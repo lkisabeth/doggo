@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'profiles/show'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :howls do
@@ -7,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   root 'howls#index'
+
+  get ':doggo_name', to: 'profiles#show', as: :profile
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
