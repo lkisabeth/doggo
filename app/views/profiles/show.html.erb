@@ -1,3 +1,28 @@
+<div class="howls-wrapper">
+  <div class="row profile-header">
+    <div class="col-md-6">
+      <div class="img-circle">
+        <%= profile_avatar_select(@user) %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="doggo-name-and-follow">
+        <h3 class="profile-doggo-name"><%= @user.doggo_name %></h3>
+        <span>
+          <% if @user == current_user %>
+            <%= link_to "Edit Profile", edit_profile_path(@user.doggo_name), class: 'btn edit-button' %>
+          <% end %>
+        </span>
+
+        <p class="profile-bio"><%= @user.bio %></p>
+        <div class="user-statistics">
+          <p><%= pluralize @user.howls.count, 'post' %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <% @howls.each do |howl| %>
   <%= render 'howls/howl', howl: howl %>
 <% end %>

@@ -1,0 +1,32 @@
+<div class="howls-wrapper">
+  <div class="howl">
+    <div class="howl-body">
+      <div class="image-wrap">
+        <%= form_for @user, url: { action: "update" }, html: { multiport: true } do |f| %>
+          <div class="row">
+            <div class="col-mid-12">
+              <div class="form-group text-center">
+                <h4>Change your doggo selfie:</h4>
+                <div class="img-circle">
+                  <%= profile_avatar_select(@user) %>
+                </div>
+                <%= f.file_field :avatar, label: false, input_html: { onChange: 'loadFile(event)' } %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-mid-12">
+              <div class="form-group text-center">
+                <h4>Bark a bit about yourself!</h4>
+                <%= f.text_area :bio, label: false, rows: 4 %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <%= f.submit "Update Profile", class: 'btn btn-success' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

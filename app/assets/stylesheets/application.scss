@@ -98,6 +98,40 @@ body {
   margin: 0px auto;
 }
 
+/* ## PROFILE CUSTOMISATIONS ## */
+
+#user_avatar {
+  margin: 20px auto;
+}
+
+.profile-header {
+  padding: 20px 0;
+}
+
+.profile-image {
+  margin: 20px auto;
+  height: 152px;
+  width: 152px;
+}
+
+.doggo-name-and-follow {
+  display: inline;
+}
+
+.profile-doggo-name {
+  display: inline;
+}
+
+.edit-button {
+  border-color: #818488;
+  color: #818488;
+  margin-left: 20px;
+}
+
+.profile-bio {
+  margin-top: 20px;
+}
+
 /* ## NAVBAR CUSTOMISATIONS ## */
 
 .navbar {
