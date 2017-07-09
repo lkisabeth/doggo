@@ -8,6 +8,7 @@ html {
 }
 
 body {
+  margin-top: 100px;
   height: 100%;
   background-color: #fafafa;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -106,6 +107,7 @@ body {
 
 .profile-header {
   padding: 20px 0;
+  margin-bottom: 40px;
 }
 
 .profile-image {
@@ -135,10 +137,15 @@ body {
 /* ## NAVBAR CUSTOMISATIONS ## */
 
 .navbar {
-  margin-bottom: 0px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
 }
 
 .navbar-brand {
+  margin-top: 0px;
+  padding-top: 0px;
   a {
     color: #125688;
   }
@@ -160,7 +167,7 @@ body {
 /* ## POST CUSTOMISATIONS ## */
 
 .howls-wrapper {
-  padding-top: 40px;
+  padding-top: 0px;
   margin: 0 auto;
   max-width: 642px;
   width: 100%;
@@ -234,6 +241,11 @@ body {
   padding-bottom: 10px;
   font-size: 15px;
   line-height: 18px;
+}
+
+.user-name a:hover {
+  color: #2D6DA8;
+  text-decoration: none;
 }
 
 .barkback-content {
