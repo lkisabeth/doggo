@@ -1,7 +1,7 @@
 <div class="flash">
 
     <% flash.each do |type, message| %>
-      <div class="alert <%= alert_for(type) %> alert-dismissible">
+      <div class="alert alert-fixed <%= alert_for(type) %> alert-dismissible text-center fade in">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <%= message %>
       </div>
