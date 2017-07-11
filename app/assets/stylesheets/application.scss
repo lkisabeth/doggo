@@ -37,128 +37,6 @@ body {
   opacity: 1;
 }
 
-#paginator {
-  color: #4090DB;
-  height: 120px;
-  width: 120px;
-  margin: 60px auto 40px;
-  position: relative;
-  display: table;
-  border: 2px solid #4090DB;
-  border-radius: 50%;
-  :hover {
-    border: 1px solid #2D6DA8;
-    border-radius: 50%;
-  }
-}
-
-#moar {
-  display: table-cell;
-  font-size: 12px;
-  padding: 0px 9px;
-  vertical-align: middle;
-  text-decoration: none;
-  a :hover {
-    color: #2D6DA8;
-  }
-}
-
-.barkbacks {
-  .paginator {
-    margin: 0.5em;
-    .moar-barkbacks {
-      color: #A5A7AA;
-    }
-  }
-}
-
-.registration-bg {
-  position: fixed;
-  margin-top: -50px;
-  padding-top: 80px;
-  height: 100%;
-  width: 100%;
-  background-image: image-url("sign_up_background.jpg");
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.login-bg {
-  position: fixed;
-  margin-top: -50px;
-  padding-top: 80px;
-  height: 100%;
-  width: 100%;
-  background-image: image-url("log_in_background.jpg");
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.log-in{
-  margin-left: auto;
-  margin-right: auto;
-  text-align:center;
-  border: none;
-}
-
-.panel {
-  border-radius: 8px;
-}
-
-.panel-heading{
-  h1 {
-    text-align: center;
-  }
-}
-
-#image-preview {
-  margin: 0px auto;
-}
-
-#howl_image {
-  padding: 1em;
-  margin: 0px auto;
-}
-
-/* ## PROFILE CUSTOMISATIONS ## */
-
-#user_avatar {
-  margin: 20px auto;
-}
-
-.profile-header {
-  padding: 20px 0;
-  margin-bottom: 40px;
-}
-
-.profile-image {
-  margin: 20px auto;
-  height: 152px;
-  width: 152px;
-}
-
-.doggo-name-and-follow {
-  display: inline;
-}
-
-.profile-doggo-name {
-  display: inline;
-}
-
-.edit-button {
-  border-color: #818488;
-  color: #818488;
-  margin-left: 20px;
-}
-
-.profile-bio {
-  margin-top: 20px;
-}
-
 /* ## NAVBAR CUSTOMISATIONS ## */
 
 .navbar {
@@ -189,7 +67,7 @@ body {
   margin: 0 auto;
 }
 
-/* ## POST CUSTOMISATIONS ## */
+/* ## HOWL CUSTOMISATIONS ## */
 
 .howls-wrapper {
   padding-top: 0px;
@@ -254,7 +132,7 @@ body {
       font-weight: 500;
       margin-right: 0.3em;
     }
-    .delete-barkback {
+    .delete-barkback-icon {
       float: right;
       color: #515151;
     }
@@ -266,11 +144,6 @@ body {
   padding-bottom: 10px;
   font-size: 15px;
   line-height: 18px;
-}
-
-.doggo-name a:hover {
-  color: #2D6DA8;
-  text-decoration: none;
 }
 
 .barkback-content {
@@ -293,21 +166,136 @@ body {
   justify-content: center;
 }
 
-.loves {
-  margin-bottom: 7px;
+.doggo-name a:hover {
+  color: #2D6DA8;
+  text-decoration: none;
 }
 
-.love {
-  text-decoration: none;
-  color: red;
-}
-
-.love-button a:hover, a:focus {
-  text-decoration: none;
-  color: red;
+.barkbacks {
+  .paginator {
+    margin: 0.5em;
+    .more-barkbacks {
+      color: #A5A7AA;
+    }
+  }
 }
 
 /* ## Wrapper and styling for the new and edit views ## */
+
+.edit-links {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.registration-bg {
+  position: fixed;
+  margin-top: -50px;
+  padding-top: 80px;
+  height: 100%;
+  width: 100%;
+  background-image: image-url("sign_up_background.jpg");
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login-bg {
+  position: fixed;
+  margin-top: -50px;
+  padding-top: 80px;
+  height: 100%;
+  width: 100%;
+  background-image: image-url("log_in_background.jpg");
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.log-in{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  border: none;
+}
+
+.panel {
+  border-radius: 8px;
+}
+
+.panel-heading{
+  h1 {
+    text-align: center;
+  }
+}
+
+#image-preview {
+  margin: 0px auto;
+}
+
+#howl_image {
+  padding: 1em;
+  margin: 0px auto;
+}
+
+#paginator {
+  color: #4090DB;
+  height: 120px;
+  width: 120px;
+  margin: 60px auto 40px;
+  position: relative;
+  display: table;
+  border: 2px solid #4090DB;
+  border-radius: 50%;
+  :hover {
+    border: 1px solid #2D6DA8;
+    border-radius: 50%;
+    color: #4090DB;
+  }
+}
+
+#moar {
+  display: table-cell;
+  font-size: 12px;
+  padding: 0px 9px;
+  vertical-align: middle;
+  text-decoration: none;
+  a :hover {
+    color: #2D6DA8;
+  }
+}
+
+.barkbacks {
+  .paginator {
+    margin: 0.5em;
+    .moar-barkbacks {
+      color: #A5A7AA;
+    }
+  }
+}
+
+.barkback-submit-button {
+  position: absolute;
+  left: -9999px;
+}
+
+/* ## PROFILE CUSTOMISATIONS ## */
+
+.profile-header {
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.profile-image {
+  margin: 20px auto;
+  height: 152px;
+  width: 152px;
+}
+
+.doggo-name-and-follow {
+  display: inline;
+}
 
 .form-wrapper {
   width: 60%;
@@ -318,7 +306,41 @@ body {
   border-radius: 3px;
 }
 
-.edit-links {
+.profile-doggo-name {
+  display: inline;
+}
+
+.edit-button {
+  border-color: #818488;
+  color: #818488;
+  margin-left: 20px;
+}
+
+.profile-bio {
   margin-top: 20px;
-  margin-bottom: 40px;
+}
+
+#user_bio {
+  border: 1px solid gray;
+}
+
+#user_avatar {
+  margin: 20px auto;
+}
+
+/* ## LOVES CUSTOMISATIONS ## */
+
+.loves {
+  margin-bottom: 7px;
+  color: #4b4f54;
+}
+
+.love {
+  text-decoration: none;
+  color: red;
+}
+
+.love-button a:hover, a:focus {
+  text-decoration: none;
+  color: red;
 }

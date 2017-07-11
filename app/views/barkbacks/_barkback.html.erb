@@ -1,8 +1,8 @@
-<div class="" id="comment">
+<div class="" id="barkback">
   <p class="barkback-content"><span class="doggo-name"><%= link_to barkback.user.doggo_name, profile_path(barkback.user.doggo_name) %></span> <%= barkback.content %></p>
   <% if barkback.user == current_user %>
     <%= link_to howl_barkback_path(howl, barkback), method: :delete, data: { confirm: "Muzzle this barkback? Are you sure?" }, remote: true do %>
-      <span class="glyphicon glyphicon-remove delete-barkback"></span>
+      <span class="glyphicon glyphicon-remove delete-barkback-icon"></span>
     <% end %>
   <% end %>
 </div>
