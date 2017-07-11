@@ -12,6 +12,31 @@ body {
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
+.alert {
+  margin-bottom: 0px;
+}
+
+.alert-fixed {
+  position:fixed;
+  top: 50px;
+  left: 0px;
+  width: 100%;
+  z-index:9999;
+  border-radius:0px
+}
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
 #paginator {
   color: #4090DB;
   height: 120px;
@@ -45,31 +70,6 @@ body {
       color: #A5A7AA;
     }
   }
-}
-
-.alert {
-  margin-bottom: 0px;
-}
-
-.alert-fixed {
-  position:fixed;
-  top: 50px;
-  left: 0px;
-  width: 100%;
-  z-index:9999;
-  border-radius:0px
-}
-
-.fade {
-  opacity: 0;
-  -webkit-transition: opacity 0.15s linear;
-  -moz-transition: opacity 0.15s linear;
-  -o-transition: opacity 0.15s linear;
-  transition: opacity 0.15s linear;
-}
-
-.fade.in {
-  opacity: 1;
 }
 
 .registration-bg {
@@ -215,10 +215,10 @@ body {
     color: #125688;
     font-size: 15px;
     line-height: 18px;
-    .user-name, .time-ago {
+    .doggo-name, .time-ago {
       display: inline;
     }
-    .user-name {
+    .doggo-name {
       font-weight: 500;
     }
     .time-ago {
@@ -233,24 +233,24 @@ body {
 }
 
 .howl-bottom {
-  .user-name, .barkback-content {
+  .doggo-name, .barkback-content {
     display: inline;
   }
   .caption {
     margin-bottom: 7px;
   }
-  .user-name {
+  .doggo-name {
     font-weight: 500;
     margin-right: 0.3em;
     color: #125688;
     font-size: 15px;
   }
-  .user-name, .caption-content {
+  .doggo-name, .caption-content {
     display: inline;
   }
-  #comment {
+  #barkback {
     margin-top: 7px;
-    .user-name {
+    .doggo-name {
       font-weight: 500;
       margin-right: 0.3em;
     }
@@ -268,7 +268,7 @@ body {
   line-height: 18px;
 }
 
-.user-name a:hover {
+.doggo-name a:hover {
   color: #2D6DA8;
   text-decoration: none;
 }
@@ -281,7 +281,7 @@ body {
   color: #4B4F54;
 }
 
-.barkback-like-form {
+.barkback-love-form {
   padding-top: 24px;
   margin-top: 13px;
   margin-left: 24px;
@@ -291,6 +291,20 @@ body {
   border-top: 1px solid #EEEFEF;
   flex-direction: row;
   justify-content: center;
+}
+
+.loves {
+  margin-bottom: 7px;
+}
+
+.love {
+  text-decoration: none;
+  color: red;
+}
+
+.love-button a:hover, a:focus {
+  text-decoration: none;
+  color: red;
 }
 
 /* ## Wrapper and styling for the new and edit views ## */

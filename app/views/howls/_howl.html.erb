@@ -1,7 +1,7 @@
 <div class="howls-wrapper">
   <div class="howl">
     <div class="howl-head">
-      <div class="user-name">
+      <div class="doggo-name">
         <%= link_to howl.user.doggo_name, profile_path(howl.user.doggo_name) %>
       </div>
       <div class="time-ago">
@@ -12,7 +12,8 @@
       <%= link_to (image_tag howl.image.url(:medium), class: 'img-responsive'), howl_path(howl) %>
     </div>
     <div class="howl-bottom">
-      <p class="caption"><span class="user-name"><%= link_to howl.user.doggo_name, profile_path(howl.user.doggo_name) %></span> <%= howl.caption %></p>
+      <%= render 'howls/loves', howl: howl %>
+      <p class="caption"><span class="doggo-name"><%= link_to howl.user.doggo_name, profile_path(howl.user.doggo_name) %></span> <%= howl.caption %></p>
       <p class="human_name">My human: <%= howl.user.human_name %></p>
       <div class="barkbacks" id="barkbacks_<%=howl.id%>">
         <% if howl.barkbacks.any? %>
@@ -26,7 +27,7 @@
       </div>
       <div class="barkback-love-form row">
         <div class="love-button col-sm-1">
-          <%= link_to '', love_howl_path(howl.id), remote: true, id: "love_#{howl.id}", class: "glyphicon glyphicon-heart-empty" %>
+          <%= link_to '', howl.voted_on_by?(current_user) ? unlove_howl_path(howl.id) : love_howl_path(howl.id), remote: true, id: "love_#{howl.id}", class: "love glyphicon #{loved_howl howl}" %>
         </div>
         <div class="barkback-form col-sm-11">
           <%= form_for([howl, howl.barkbacks.build], remote: true) do |f| %>

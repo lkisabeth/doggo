@@ -1,5 +1,5 @@
 class HowlsController < ApplicationController
-  before_action :set_howl, only: [:show, :edit, :update, :destroy, :love]
+  before_action :set_howl, only: [:show, :edit, :update, :destroy, :love, :unlove]
   before_action :owned_howl, only: [:edit, :update, :destroy]
 
   def index
@@ -46,6 +46,15 @@ class HowlsController < ApplicationController
 
   def love #liked_by is an 'acts_as_votable' method
     if @howl.liked_by current_user
+      respond_to do |format|
+        format.html { redirect_to :back }
+        format.js
+      end
+    end
+  end
+
+  def unlove
+    if @howl.unliked_by current_user
       respond_to do |format|
         format.html { redirect_to :back }
         format.js

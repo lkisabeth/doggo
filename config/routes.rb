@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :barkbacks
     member do
       get 'love'
+      get 'unlove'
     end
   end
 

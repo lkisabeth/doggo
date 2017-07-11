@@ -1,0 +1,2 @@
+$("#love_<%= @howl.id %>").removeClass('glyphicon-heart').addClass('glyphicon-heart-empty').prop('href', '<%= love_howl_path(@howl.id) %>')
+$("#loves_<%= @howl.id %>").html("<%= j (render partial: 'howls/loves', locals: { howl: @howl } ) %>")

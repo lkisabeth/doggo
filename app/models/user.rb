@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  acts_as_voter
+
   validates :human_name, presence: true, length: { minimum: 4, maximum: 20 }
   validates :doggo_name, presence: true, length: { minimum: 2, maximum: 16 }
 

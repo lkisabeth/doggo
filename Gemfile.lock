@@ -195,7 +195,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts_as_votable
+  acts_as_votable (~> 0.10.0)
   bootstrap-sass (~> 3.3.5)
   byebug
   coffee-rails (~> 4.2.2)
