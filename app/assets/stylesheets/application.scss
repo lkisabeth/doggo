@@ -73,9 +73,11 @@ body {
 }
 
 .registration-bg {
+  position: fixed;
   margin-top: -50px;
   padding-top: 80px;
   height: 100%;
+  width: 100%;
   background-image: image-url("sign_up_background.jpg");
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -84,9 +86,11 @@ body {
 }
 
 .login-bg {
+  position: fixed;
   margin-top: -50px;
   padding-top: 80px;
   height: 100%;
+  width: 100%;
   background-image: image-url("log_in_background.jpg");
   -moz-background-size: cover;
   -webkit-background-size: cover;

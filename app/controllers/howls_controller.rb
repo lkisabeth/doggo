@@ -1,5 +1,4 @@
 class HowlsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_howl, only: [:show, :edit, :update, :destroy]
   before_action :owned_howl, only: [:edit, :update, :destroy]
 
