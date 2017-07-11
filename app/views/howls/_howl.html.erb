@@ -12,7 +12,7 @@
       <%= link_to (image_tag howl.image.url(:medium), class: 'img-responsive'), howl_path(howl) %>
     </div>
     <div class="howl-bottom">
-      <p class="caption"><span class="user-name"><%= howl.user.doggo_name %></span> <%= howl.caption %></p>
+      <p class="caption"><span class="user-name"><%= link_to howl.user.doggo_name, profile_path(howl.user.doggo_name) %></span> <%= howl.caption %></p>
       <p class="human_name">My human: <%= howl.user.human_name %></p>
       <div class="barkbacks" id="barkbacks_<%=howl.id%>">
         <% if howl.barkbacks.any? %>
