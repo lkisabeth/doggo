@@ -37,8 +37,8 @@ gem 'paperclip', '~> 5.1.0'
 gem 'simple_form', '~> 3.5.0'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'jquery-turbolinks'
-gem 'haml'
 gem 'kaminari'
+gem 'acts_as_votable'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

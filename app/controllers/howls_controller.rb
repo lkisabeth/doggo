@@ -1,5 +1,5 @@
 class HowlsController < ApplicationController
-  before_action :set_howl, only: [:show, :edit, :update, :destroy]
+  before_action :set_howl, only: [:show, :edit, :update, :destroy, :love]
   before_action :owned_howl, only: [:edit, :update, :destroy]
 
   def index
@@ -42,6 +42,15 @@ class HowlsController < ApplicationController
     @howl.destroy
     flash[:alert] = "That boofer has been muzzled for good."
     redirect_to root_path
+  end
+
+  def love #liked_by is an 'acts_as_votable' method
+    if @howl.liked_by current_user
+      respond_to do |format|
+        format.html { redirect_to :back }
+        format.js
+      end
+    end
   end
 
   private

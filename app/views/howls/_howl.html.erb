@@ -24,9 +24,9 @@
           <% end %>
         <% end %>
       </div>
-      <div class="barkback-like-form row">
-        <div class="like-button col-sm-1">
-          <span class="glyphicon glyphicon-heart-empty"></span>
+      <div class="barkback-love-form row">
+        <div class="love-button col-sm-1">
+          <%= link_to '', love_howl_path(howl.id), remote: true, id: "love_#{howl.id}", class: "glyphicon glyphicon-heart-empty" %>
         </div>
         <div class="barkback-form col-sm-11">
           <%= form_for([howl, howl.barkbacks.build], remote: true) do |f| %>

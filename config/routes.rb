@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   resources :howls do
     resources :barkbacks
+    member do
+      get 'love'
+    end
   end
 
   root 'howls#index'

@@ -8,4 +8,6 @@ class Howl < ActiveRecord::Base
 
   belongs_to :user
   has_many :barkbacks, dependent: :destroy
+
+  acts_as_votable
 end
