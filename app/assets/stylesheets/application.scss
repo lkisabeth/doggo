@@ -37,7 +37,7 @@ body {
   opacity: 1;
 }
 
-/* ## NAVBAR CUSTOMISATIONS ## */
+/* ## NAVBAR CUSTOMIZATIONS ## */
 
 .navbar {
   position: fixed;
@@ -67,7 +67,7 @@ body {
   margin: 0 auto;
 }
 
-/* ## HOWL CUSTOMISATIONS ## */
+/* ## HOWL CUSTOMIZATIONS ## */
 
 .howls-wrapper {
   padding-top: 0px;
@@ -280,7 +280,7 @@ body {
   left: -9999px;
 }
 
-/* ## PROFILE CUSTOMISATIONS ## */
+/* ## PROFILE CUSTOMIZATIONS ## */
 
 .profile-header {
   padding: 20px 0;
@@ -328,7 +328,7 @@ body {
   margin: 20px auto;
 }
 
-/* ## LOVES CUSTOMISATIONS ## */
+/* ## LOVES CUSTOMIZATIONS ## */
 
 .loves {
   margin-bottom: 7px;
@@ -343,4 +343,30 @@ body {
 .love-button a:hover, a:focus {
   text-decoration: none;
   color: red;
+}
+
+/* ## FOLLOWING CUSTOMIZATIONS ## */
+
+.follow-button {
+  text-transform: uppercase;
+  border-color: #4090db;
+  color: #4090db;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #2D6396;
+    color: #2D6396;
+  }
+}
+
+.unfollow-button {
+  text-transform: uppercase;
+  border-color: #66bd2b;
+  background-color: #66bd2b;
+  color: white;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #47821F;
+    background-color: #47821F;
+    color: white;
+  }
 }
