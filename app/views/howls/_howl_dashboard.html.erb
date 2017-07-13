@@ -1,0 +1,13 @@
+<% if @howls.empty? %>
+  <p class="text-center">You aren't tracking any fellow Doggos!  Check out the "Browse" section and start tracking!</p>
+<% end %>
+
+<div id="howls">
+    <%= render 'howls' %>
+</div>
+
+<% if @howls.next_page %>
+  <div class="text-center" id="paginator">
+    <%= link_to_next_page @howls, 'MOAR HOOOOWLS!', remote: true, id: 'moar' %>
+  </div>
+<% end %>

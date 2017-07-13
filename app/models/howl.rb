@@ -1,6 +1,6 @@
 class Howl < ActiveRecord::Base
   acts_as_votable
-  
+
   validates :image, presence: true
   validates :caption, length: { minimum: 3, maximum: 300 }
   validates :user_id, presence: true
@@ -10,4 +10,6 @@ class Howl < ActiveRecord::Base
 
   belongs_to :user
   has_many :barkbacks, dependent: :destroy
+
+  scope :of_followed_users, -> (following_users) { where user_id: following_users }
 end

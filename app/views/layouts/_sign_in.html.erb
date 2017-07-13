@@ -1,5 +1,10 @@
-<ul class="nav navbar-nav navbar-right">
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
+  <ul class="nav navbar-nav">
+    <li>
+      <%= link_to "Browse", browse_howls_path %>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
     <li>
       <%= link_to new_howl_path, :class => "" do %>
         <i class="glyphicon glyphicon-plus"></i> Howl
@@ -10,7 +15,8 @@
         <i class="glyphicon glyphicon-log-out"></i> Logout
       <% end %>
     </li>
-  <% else %>
+<% else %>
+  <ul class="nav navbar-nav navbar-right">
     <li>
       <%= link_to new_user_session_path do %>
         <i class="glyphicon glyphicon-log-in"></i> Login
@@ -21,6 +27,5 @@
         <i class="glyphicon glyphicon-user"></i> Register
       <% end %>
     </li>
-  <% end %>
-
+<% end %>
 </ul>

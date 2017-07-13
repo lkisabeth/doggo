@@ -3,6 +3,10 @@ class HowlsController < ApplicationController
   before_action :owned_howl, only: [:edit, :update, :destroy]
 
   def index
+    @howls = Howl.of_followed_users(current_user.following).order('created_at DESC').page params[:page]
+  end
+
+  def browse
     @howls = Howl.all.order('created_at DESC').page params[:page]
   end
 
