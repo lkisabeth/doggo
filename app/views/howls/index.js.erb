@@ -1,0 +1,3 @@
+$('#howls').append("<%= escape_javascript(render 'howls')%>");
+$('#paginator').html("<%= escape_javascript(link_to_next_page(@howls, 'MOAR HOOOOWLS!', remote: true, id: 'moar'))%>");
+if (!$('#moar').length) { $('#paginator').remove(); }
