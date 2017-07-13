@@ -12,13 +12,17 @@
           <% if @user == current_user %>
             <%= link_to "Edit Profile", edit_profile_path(@user.doggo_name), class: 'btn edit-button' %>
           <% else %>
-            <%= link_to "Tracking", unfollow_user_path, remote: true, class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
+            <% if current_user_is_following(current_user.id, @user.id) %>
+              <%= link_to "Tracking", unfollow_user_path, remote: true, class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
+            <% else %>
+              <%= link_to "Track", follow_user_path, remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %>
+            <% end %>
           <% end %>
         </span>
 
         <p class="profile-bio"><%= @user.bio %></p>
         <div class="user-statistics">
-          <p><%= pluralize @user.howls.count, 'post' %></p>
+          <p><%= pluralize @user.howls.count, 'howl' %></p>
         </div>
       </div>
     </div>
