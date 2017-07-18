@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712003856) do
+ActiveRecord::Schema.define(version: 20170713161224) do
 
   create_table "barkbacks", force: :cascade do |t|
     t.integer "user_id"
@@ -64,8 +64,10 @@ ActiveRecord::Schema.define(version: 20170712003856) do
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.text "bio"
+    t.string "provider"
+    t.string "uid"
     t.index ["doggo_name"], name: "index_users_on_doggo_name"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email"], name: "index_users_on_email"
     t.index ["human_name"], name: "index_users_on_human_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

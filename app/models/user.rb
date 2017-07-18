@@ -7,7 +7,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable,
+         :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :howls, dependent: :destroy
   has_many :barkbacks, dependent: :destroy
@@ -25,5 +26,16 @@ class User < ApplicationRecord
 
   def unfollow(user_id)
     following_relationships.find_by(following_id: user_id).destroy
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provder, uid: auth.uid).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+      user.human_name = auth.info.name
+      user.doggo_name = "DogNameHere"
+    end
   end
 end

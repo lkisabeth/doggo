@@ -11,6 +11,10 @@
       <% end %>
     </li>
     <li>
+      <%= link_to profile_path(current_user.doggo_name) do %>
+        <i class="glyphicon glyphicon-user"></i> My Profile
+      <% end %>
+    <li>
       <%= link_to destroy_user_session_path, :method => "delete" do %>
         <i class="glyphicon glyphicon-log-out"></i> Logout
       <% end %>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'browse', to: 'howls#browse', as: :browse_howls
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "omniauth_callbacks" }
 
   resources :howls do
     resources :barkbacks

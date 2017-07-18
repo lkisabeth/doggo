@@ -14,7 +14,7 @@
                 <%= f.input :password, required: true, label: false, placeholder: 'Password', input_html: { class: 'input-lg' } %>
                 <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                 <%= f.button :submit, "Log in", class: 'btn-lg btn-info btn-block' %>
-                <%= render "devise/shared/links" %>
+                <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
               </div>
             <% end %>
         </div>
