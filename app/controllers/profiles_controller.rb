@@ -23,10 +23,11 @@ class ProfilesController < ApplicationController
   private
 
     def profile_params
-      params.require(:user).permit(:avatar, :bio)
+      params.require(:user).permit(:avatar, :bio, :doggo_name)
     end
 
     def my_profile
+      @user = User.find_by(doggo_name: params[:doggo_name])
       unless current_user == @user
         flash[:alert] = "Paws off! Your are not the doggo we're looking for!"
         redirect_to root_path

@@ -6,7 +6,15 @@
           <div class="row">
             <div class="col-mid-12">
               <div class="form-group text-center">
-                <h4>Change your doggo selfie:</h4>
+                <h4>Change your Doggo's name:</h4>
+                <%= f.text_field :doggo_name, required: true, label: false, placeholder: @user.doggo_name, input_html: { class: 'input-lg' } %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-mid-12">
+              <div class="form-group text-center">
+                <h4>Change your Doggo's selfie:</h4>
                 <div class="img-circle">
                   <%= profile_avatar_select(@user) %>
                 </div>
