@@ -24,6 +24,14 @@ class BarkbacksController < ApplicationController
     end
   end
 
+  def new
+    @barkback = @howl.barkbacks.new
+  end
+
+  def show
+    @barkback = @howl.barkbacks.find(params[:id])
+  end
+
   def destroy
     @barkback = @howl.barkbacks.find(params[:id])
 
