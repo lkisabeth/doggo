@@ -36,5 +36,16 @@
         </div>
       </div>
     </div>
+    <div class="overlap overlap-wrapper text-center">
+      <div class="text">
+      <%= form_for([howl, howl.scents.build], remote: true) do |f| %>
+        <%= f.label :scent, "Sniff..sniff.." %>
+        <%= f.select :stench, Scent.stenches.keys.map { |s| [s.humanize, s] }, class: '' %>
+        <%= f.hidden_field :howl_id, :value => howl.id %>
+        <%= f.submit "SNIFF", class: 'btn btn-sm btn-primary' %>
+      <% end %><br>
+      <span>Average Sniff Test Rating:<br> <%= sniff_test(howl).humanize %></span>
+      </div>
+    </div>
   </div>
 </div>

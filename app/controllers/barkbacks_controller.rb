@@ -46,7 +46,7 @@ class BarkbacksController < ApplicationController
 
   private
     def barkback_params
-      params.require(:barkback).permit(:content)
+      params.require(:barkback).permit(:content, scents_attributes: [:stench, :howl_id])
     end
 
     def set_howl

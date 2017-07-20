@@ -68,7 +68,7 @@ class HowlsController < ApplicationController
 
   private
     def howl_params
-      params.require(:howl).permit(:image, :caption)
+      params.require(:howl).permit(:image, :caption, scents_attributes: [:stench, :howl_id])
     end
 
     def set_howl

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get 'love'
       get 'unlove'
     end
+    resources :scents, only: [:create]
   end
 
   root 'howls#index'
