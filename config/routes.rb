@@ -18,6 +18,13 @@ Rails.application.routes.draw do
     resources :scents, only: [:create]
   end
 
+  resources :barkbacks do
+    member do
+      get 'love'
+      get 'unlove'
+    end
+  end
+
   root 'howls#index'
 
   get ':doggo_name', to: 'profiles#show', as: :profile

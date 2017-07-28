@@ -136,6 +136,10 @@ body {
       float: right;
       color: #515151;
     }
+    .love-barkback-icon {
+      float: right;
+      text-decoration: none;
+    }
   }
   margin-bottom: 7px;
   padding-top: 24px;
@@ -181,6 +185,7 @@ body {
 }
 
 .overlap-wrapper {
+  pointer-events: none;
   padding-top: 0px;
   margin: 0 auto;
   max-width: 642px;

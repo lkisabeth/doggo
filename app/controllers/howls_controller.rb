@@ -4,10 +4,18 @@ class HowlsController < ApplicationController
 
   def index
     @howls = Howl.of_followed_users(current_user.following).order('created_at DESC').page params[:page]
+    respond_to do |format|
+      format.html
+      format.json { render json: @howls }
+    end
   end
 
   def browse
     @howls = Howl.all.order('created_at DESC').page params[:page]
+    respond_to do |format|
+      format.html
+      format.json { render json: @howls }
+    end
   end
 
   def new
@@ -19,7 +27,7 @@ class HowlsController < ApplicationController
 
     if @howl.save
       flash[:success] = "You have Howled loud and clear for all to hear!"
-      redirect_to howls_path
+      redirect_to '/browse'
     else
       flash.now[:alert] = "Your boofer seems to be broken. Try again!"
       render :new
@@ -27,6 +35,10 @@ class HowlsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @howl }
+    end
   end
 
   def edit

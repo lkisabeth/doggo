@@ -1,5 +1,6 @@
 class BarkbacksController < ApplicationController
-  before_action :set_howl
+  before_action :set_howl, except: [:love, :unlove]
+  before_action :set_barkback, only: [:love, :unlove]
 
   def index
     @barkbacks = @howl.barkbacks.order("created_at ASC")
@@ -44,6 +45,24 @@ class BarkbacksController < ApplicationController
     end
   end
 
+  def love #liked_by is an 'acts_as_votable' method
+    if @barkback.liked_by current_user
+      respond_to do |format|
+        format.html { redirect_to :back }
+        format.js
+      end
+    end
+  end
+
+  def unlove
+    if @barkback.unliked_by current_user
+      respond_to do |format|
+        format.html { redirect_to :back }
+        format.js
+      end
+    end
+  end
+
   private
     def barkback_params
       params.require(:barkback).permit(:content, scents_attributes: [:stench, :howl_id])
@@ -51,6 +70,10 @@ class BarkbacksController < ApplicationController
 
     def set_howl
       @howl = Howl.find(params[:howl_id])
+    end
+
+    def set_barkback
+      @barkback = Barkback.find(params[:id])
     end
 
 end
