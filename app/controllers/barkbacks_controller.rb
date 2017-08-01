@@ -17,7 +17,7 @@ class BarkbacksController < ApplicationController
     if @barkback.save
       respond_to do |format|
         format.json { render :json => @barkback }
-        format.html { redirect_to '/browse' }
+        format.html { redirect_to root_path }
       end
     else
       flash[:alert] = "That's not much of a bark. Unmuzzle yourself and try again!"
