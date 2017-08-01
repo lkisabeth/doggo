@@ -17,15 +17,12 @@ $(function(){
 
       var barkbackDIV = barkback.renderDIV()
 
-      $("#barkbacks_<%=howl.id%>").append(barkbackDIV)
+      $("#barkbacks_<%= howl.id %>").append(barkbackDIV)
+      $("#barkback_content_<%=@howl.id%>").val('')
     })
     .error(function(response){
       console.log("Something went wrong...", response)
     })
-    //    $('#barkbacks_<%#=@howl.id%>').append(response);
-      //  $('#barkback_content_<%#=@howl.id%>').val('')
-      //},
-    //});
   })
 })
 
@@ -36,6 +33,11 @@ function Barkback(attributes){
   this.user = attributes.user;
 }
 
+$(function(){
+  Barkback.templateSource = $('#barkback-template').html()
+  Barkback.template = Handlebars.compile(Barkback.templateSource);
+})
+
 Barkback.prototype.renderDIV = function(){
-  
+  return Barkback.template(this);
 }

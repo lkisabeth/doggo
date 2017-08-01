@@ -4,5 +4,7 @@
     <%= link_to howl_barkback_path(@howl, @barkback), method: :delete, data: { confirm: "Muzzle this barkback? Are you sure?" }, remote: true do %>
       <span class="glyphicon glyphicon-remove delete-barkback-icon"></span>
     <% end %>
+  <% else %>
+    <%= link_to '', @barkback.voted_on_by?(current_user) ? unlove_barkback_path(@barkback.id) : love_barkback_path(@barkback.id), remote: true, id: "love_#{@barkback.id}", class: "love love-barkback-icon glyphicon #{loved_barkback barkback}" %>
   <% end %>
 </div>
