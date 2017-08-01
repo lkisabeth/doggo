@@ -18,4 +18,5 @@
 //= require bootstrap-sprockets
 //= require bootstrap/dropdown
 //= require bootstrap/modal
+//= require handlebars
 //= require_tree .

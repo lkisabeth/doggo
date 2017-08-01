@@ -43,6 +43,7 @@ gem 'jquery-turbolinks'
 gem 'kaminari'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'handlebars_assets'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
