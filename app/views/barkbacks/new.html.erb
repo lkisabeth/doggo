@@ -1,5 +1,5 @@
 <div class="barkback-form col-sm-11">
-  <%= simple_form_for([@howl, @howl.barkbacks.build], remote: true) do |f| %>
+  <%= simple_form_for([@howl, @howl.barkbacks.build]) do |f| %>
     <%= f.input :content, placeholder: 'Bark back at them..!', class: "barkback_content", id: "barkback_content_#{@howl.id}" %>
   <% end %>
 </div>
