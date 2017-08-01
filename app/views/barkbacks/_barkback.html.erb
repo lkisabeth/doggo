@@ -9,12 +9,11 @@
   <% end %>
 </div>
 
-
 <script id="barkback-template" type="text/x-handlebars-template">
-  <div class="" id="barkback">
-    <p class="barkback-content"><span class="doggo-name"><a href="/<%= barkback.user.doggo_name %>"><%= barkback.user.doggo_name %></a></span> {{content}}</p>
+    <div class="" id="barkback">
+      <p class="barkback-content"><span class="doggo-name"><a href="/<%= barkback.user.doggo_name %>"><%= barkback.user.doggo_name %></a></span> {{content}}</p>
       <a data-confirm="Muzzle this barkback? Are you sure?" data-remote="true" rel="nofollow" data-method="delete" href="/howls/<%= howl.id %>/barkbacks/{{id}}">
         <span class="glyphicon glyphicon-remove delete-barkback-icon"></span>
       </a>
-  </div>
+    </div>
 </script>
