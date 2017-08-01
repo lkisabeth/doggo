@@ -13,7 +13,11 @@ $(function(){
       method: "POST"
     })
     .success(function(json){
-      console.log(json)
+      var barkback = new Barkback(json);
+
+      var barkbackDIV = barkback.renderDIV()
+
+      $("#barkbacks_<%=howl.id%>").append(barkbackDIV)
     })
     .error(function(response){
       console.log("Something went wrong...", response)
@@ -22,7 +26,10 @@ $(function(){
       //  $('#barkback_content_<%#=@howl.id%>').val('')
       //},
     //});
-
-
   })
 })
+
+function Barkback(attributes){
+  this.content = attributes.content;
+  this.id = attributes.id;
+}
