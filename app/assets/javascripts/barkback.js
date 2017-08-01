@@ -28,7 +28,7 @@ Barkback.prototype.renderDIV = function(){
 }
 
 var setBarkbackJsModel = () => {
-  $("#new_barkback").on("submit", function(e){
+  $(document).on("submit", "form#new_barkback", function(e){
     e.preventDefault();
     var $form = $(this);
     var action = $form.attr("action");
