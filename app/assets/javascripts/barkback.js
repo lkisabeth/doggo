@@ -8,7 +8,7 @@ function Barkback(attributes){
 Barkback.success = function(json){
   var barkback = new Barkback(json);
   var barkbackDIV = barkback.renderDIV();
-  
+
   $("#barkbacks_" + json.howl.id).append(barkbackDIV)
   $("#barkback_content_" + json.howl.id).val('')
 }

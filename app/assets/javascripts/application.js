@@ -18,5 +18,5 @@
 //= require bootstrap/dropdown
 //= require bootstrap/modal
 //= require handlebars
-//= require_tree .
 //= require turbolinks
+//= require_tree .
