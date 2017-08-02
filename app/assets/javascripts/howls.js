@@ -12,16 +12,28 @@ function Howl(attributes) {
   this.barkbacks = attributes.barkbacks
 }
 
-Howl.succes = function(json) {
-  var howl = new Howl(json)
-  var howlDiv = user.renderDiv();
-  
+Howl.success = function(json) {
+  console.log(json)
+
+  $('#jsonDiv').append(
+    '<p>' + json.user.doggo_name + '</p>'
+  );
 }
 
+Howl.error = function(response) {
+  console.log("Uh oh..", response)
+}
+
+function responseHandler(res) {
+  var flatArray = [];
+  $.each(res, function(i, el) {
+    flatArray.push(JSON.flatten(el));
+  });
+  return flatArray
+}
 
 $(document).ready(function(){
-  $("getJsonBtn").on('click', function(e) {
-    debugger
+  $("#getJsonBtn").on('click', function(e) {
     e.preventDefault()
     var path = this.href;
 
