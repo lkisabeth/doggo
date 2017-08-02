@@ -15,8 +15,19 @@ function Howl(attributes) {
 Howl.success = function(json) {
   console.log(json)
 
-  $('#jsonDiv').append(
-    '<p>' + json.user.doggo_name + '</p>'
+  $('#jsonDiv').addClass("jsonDiv panel panel-primary").append(
+    '<div class="panel-heading">JSON Response Data</div>',
+    '<div class="panel-body">',
+    '<p>Doggo name: ' + json.user.doggo_name + '</p>',
+    '<p>Human name: ' + json.user.human_name + '</p>',
+    '<p>Bio: ' + json.user.bio + '</p>',
+    '<p>Image: ' + json.image + '</p>',
+
+    '<p>Barkbacks: </p>',
+    $.map(json.barkbacks, function(barkback, i) {
+      return '<p>  -' + barkback.content + '</p>';
+    }),
+    '</div>'
   );
 }
 
