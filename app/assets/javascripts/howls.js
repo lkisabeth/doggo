@@ -12,6 +12,10 @@ function Howl(attributes) {
   this.barkbacks = attributes.barkbacks
 }
 
+Howl.prototype.listBasicInfo = function() {
+  console.log('ID: ' + this.id + ', Image Location: ' + this.image +', Caption: ' + this.caption);
+};
+
 Howl.success = function(json) {
   console.log(json)
 
@@ -21,7 +25,7 @@ Howl.success = function(json) {
     '<p>Doggo name: ' + json.user.doggo_name + '</p>',
     '<p>Human name: ' + json.user.human_name + '</p>',
     '<p>Bio: ' + json.user.bio + '</p>',
-    '<p>Image: ' + json.image + '</p>',
+    '<p>Image Location: ' + json.image + '</p>',
 
     '<p>Barkbacks: </p>',
     $.map(json.barkbacks, function(barkback, i) {
