@@ -6,6 +6,7 @@ class BarkbacksController < ApplicationController
     @barkbacks = @howl.barkbacks.order("created_at ASC")
 
     respond_to do |format|
+      format.json { render :json => @barkbacks }
       format.html { render layout: !request.xhr? }
     end
   end

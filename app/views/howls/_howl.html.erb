@@ -16,28 +16,19 @@
       <p class="caption"><span class="doggo-name"><%= link_to howl.user.doggo_name, profile_path(howl.user.doggo_name) %></span> <%= howl.caption %></p>
       <p class="human_name">My human: <%= howl.user.human_name %></p>
       <div class="barkbacks" id="barkbacks_<%=howl.id%>">
-        <% if howl.barkbacks.any? %>
-          <%= render howl.barkbacks.first(4), howl: howl %>
-          <% unless howl.barkbacks.count <= 4 %>
-            <div class="paginator" id="barkbacks-paginator-<%=howl.id%>">
-              <%= link_to "view all #{howl.barkbacks.count} bark-backs", howl_barkbacks_path(howl), remote: true, class: "moar-barkbacks", id: "moar_barkbacks_#{howl.id}", data: {howl_id: "#{howl.id}", type: "html", value: "#{howl.barkbacks.count}"} %>
-            </div>
-          <% end %>
-        <% end %>
+        <p class="caption">
+          <button class="load_barkbacks" id="load_barkbacks" data-howl-id="<%= howl.id %>">"Load Barkbacks"</button>
+        </p>
       </div>
       <div class="barkback-love-form row">
         <div class="love-button col-sm-1">
           <%= link_to '', howl.voted_on_by?(current_user) ? unlove_howl_path(howl.id) : love_howl_path(howl.id), remote: true, id: "love_#{howl.id}", class: "love glyphicon #{loved_howl howl}" %>
         </div>
         <div class="barkback-form col-sm-11">
-          <%= form_for([howl, howl.barkbacks.build]) do |f| %>
+          <%= form_for([howl, howl.barkbacks.build], data: { howl_id:  howl.id }) do |f| %>
             <%= f.text_field :content, placeholder: 'Bark back at them..!', class: "barkback_content", id: "barkback_content_#{howl.id}" %>
           <% end %>
         </div>
-      </div>
-      <a href="/howls/<%=howl.id%>.json" id="getJsonBtn" class="getJsonBtn"><button class="getJsonBtn btn btn-sm btn-primary">Get JSON Data</button></a>
-      <div class="jsonDiv" id="jsonDiv">
-        
       </div>
     </div>
     <div class="overlap overlap-wrapper text-center">
